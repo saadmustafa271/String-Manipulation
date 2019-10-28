@@ -3,7 +3,6 @@
     Sub Main()
         Dim Str1, Str2, Str3, char1, char2 As String
         Dim Count1, Count2 As Integer
-        Dim hasChanged As Boolean
 
         Str1 = ""
         Str2 = ""
@@ -12,7 +11,6 @@
         char2 = ""
         Count1 = 0
         Count2 = 0
-        hasChanged = False
 
         Console.Write("Enter the first string: ")
         Str1 = Console.ReadLine
@@ -25,18 +23,11 @@
             For Count1 = 1 To Len(Str1)
                 char1 = UCase(Mid(Str1, Count1, 1))
                 Str3 = ""
-                hasChanged = False
-
+            
                 For Count2 = 1 To Len(Str2)
                     char2 = UCase(Mid(Str2, Count2, 1))
                     If char2 <> char1 Then
                         Str3 = Str3 & char2
-                    Else
-                        If hasChanged = False Then
-                            hasChanged = True
-                        Else
-                            Str3 = Str3 & char2
-                        End If
                     End If
                 Next
                 Str2 = Str3
